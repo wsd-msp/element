@@ -47,12 +47,12 @@ const NewPopper = {
 const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
   month: 'yyyy-MM',
-  datetime: 'yyyy-MM-dd HH:mm:ss',
-  time: 'HH:mm:ss',
+  datetime: 'yyyy-MM-dd HH:mm',
+  time: 'HH:mm',
   week: 'yyyywWW',
-  timerange: 'HH:mm:ss',
+  timerange: 'HH:mm',
   daterange: 'yyyy-MM-dd',
-  datetimerange: 'yyyy-MM-dd HH:mm:ss',
+  datetimerange: 'yyyy-MM-dd HH:mm',
   year: 'yyyy'
 };
 const HAVE_TRIGGER_TYPES = [

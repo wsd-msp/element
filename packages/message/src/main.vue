@@ -21,7 +21,7 @@
       return {
         visible: false,
         message: '',
-        duration: 3000,
+        duration: 4500,
         type: 'info',
         iconClass: '',
         customClass: '',
