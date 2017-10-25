@@ -16,14 +16,12 @@
       </div>
       <!-- input 图标 -->
       <slot name="icon">
-        <i class="el-input__icon"
+        <svg-icon :icon="icon" class="el-input__icon"
           :class="[
-            'el-icon-' + icon,
             onIconClick ? 'is-clickable' : ''
           ]"
           v-if="icon"
-          @click="handleIconClick">
-        </i>
+          @click="handleIconClick"/>
       </slot>
       <input
         v-if="type !== 'textarea'"

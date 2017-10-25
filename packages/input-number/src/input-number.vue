@@ -12,7 +12,7 @@
       :class="{'is-disabled': minDisabled}"
       v-repeat-click="decrease"
     >
-      <i class="el-icon-minus"></i>
+      <svg-icon icon="minus"/>
     </span>
     <span
       v-if="controls"
@@ -20,7 +20,7 @@
       :class="{'is-disabled': maxDisabled}"
       v-repeat-click="increase"
     >
-      <i class="el-icon-plus"></i>
+      <svg-icon icon="plus"/>
     </span>
     <el-input
       :value="currentValue"

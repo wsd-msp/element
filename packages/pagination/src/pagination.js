@@ -100,7 +100,7 @@ export default {
             type="button"
             class={['btn-prev', { disabled: this.$parent.internalCurrentPage <= 1 }]}
             on-click={ this.$parent.prev }>
-            <i class="el-icon el-icon-arrow-left"></i>
+            <svg-icon icon="arrow-left" class="el-icon el-icon-arrow-left"/>
           </button>
         );
       }
@@ -116,7 +116,7 @@ export default {
               { disabled: this.$parent.internalCurrentPage === this.$parent.internalPageCount || this.$parent.internalPageCount === 0 }
             ]}
             on-click={ this.$parent.next }>
-            <i class="el-icon el-icon-arrow-right"></i>
+            <svg-icon icon="arrow-right" class="el-icon el-icon-arrow-right"/>
           </button>
         );
       }
