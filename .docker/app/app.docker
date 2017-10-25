@@ -1,0 +1,12 @@
+# latest official node image
+FROM node:latest
+
+
+RUN apt-get update && apt-get install -y supervisor
+RUN mkdir -p /var/log/supervisor
+COPY .docker/app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# add project files
+WORKDIR /element-io
+
+CMD ["/usr/bin/supervisord"]

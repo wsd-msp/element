@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    env_file:
+      - .env
+    container_name: ${COMPOSE_PROJECT_NAME}_app
+    build:
+        context: ../
+        dockerfile: ./.docker/app/app.docker
+    volumes:
+        - ../:/element-io
