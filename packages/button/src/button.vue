@@ -13,7 +13,7 @@
       }
     ]"
   >
-    <svg-icon class="el-icon-" icon="icon" v-if="loading" @click="handleInnerClick"></svg-icon>
+    <svg-icon class="el-icon-" icon="loading" v-if="loading" @click="handleInnerClick"></svg-icon>
     <svg-icon :class="'el-icon-'" :icon="icon" v-if="icon && !loading" @click="handleInnerClick"></svg-icon>
     <span v-if="$slots.default" @click="handleInnerClick"><slot></slot></span>
   </button>
