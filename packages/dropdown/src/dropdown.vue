@@ -123,7 +123,7 @@
               {this.$slots.default}
             </el-button>
             <el-button ref="trigger" type={type} size={size} class="el-dropdown__caret-button">
-              <i class="el-dropdown__icon el-icon-caret-bottom"></i>
+              <svg-icon icon="chevron-down" class="el-dropdown__icon el-icon-caret-bottom"/>
             </el-button>
           </el-button-group>);
 
