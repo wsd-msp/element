@@ -51,12 +51,14 @@
               type="button"
               @click="prevYear"
               class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-d-arrow-left">
+				<svg-icon icon="chevron-double-left"/>
             </button>
             <button
               type="button"
               @click="prevMonth"
               v-show="currentView === 'date'"
               class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-arrow-left">
+				<svg-icon icon="chevron-left"/>
             </button>
             <span
               @click="showYearPicker"
@@ -70,12 +72,14 @@
               type="button"
               @click="nextYear"
               class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-d-arrow-right">
+				<svg-icon icon="chevron-double-right"/>
             </button>
             <button
               type="button"
               @click="nextMonth"
               v-show="currentView === 'date'"
               class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-arrow-right">
+				<svg-icon icon="chevron-right"/>
             </button>
           </div>
 

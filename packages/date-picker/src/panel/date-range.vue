@@ -83,11 +83,15 @@
               <button
                 type="button"
                 @click="prevYear"
-                class="el-picker-panel__icon-btn el-icon-d-arrow-left"></button>
+                class="el-picker-panel__icon-btn el-icon-d-arrow-left">
+				  <svg-icon icon="chevron-double-left"/>
+			  </button>
               <button
                 type="button"
                 @click="prevMonth"
-                class="el-picker-panel__icon-btn el-icon-arrow-left"></button>
+                class="el-picker-panel__icon-btn el-icon-arrow-left">
+				  <svg-icon icon="chevron-left"/>
+			  </button>
               <div>{{ leftLabel }}</div>
             </div>
             <date-table
@@ -109,11 +113,15 @@
               <button
                 type="button"
                 @click="nextYear"
-                class="el-picker-panel__icon-btn el-icon-d-arrow-right"></button>
+                class="el-picker-panel__icon-btn el-icon-d-arrow-right">
+				  <svg-icon icon="chevron-double-right"/>
+			  </button>
               <button
                 type="button"
                 @click="nextMonth"
-                class="el-picker-panel__icon-btn el-icon-arrow-right"></button>
+                class="el-picker-panel__icon-btn el-icon-arrow-right">
+				  <svg-icon icon="chevron-right"/>
+			  </button>
               <div>{{ rightLabel }}</div>
             </div>
             <date-table

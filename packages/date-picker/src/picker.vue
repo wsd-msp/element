@@ -14,14 +14,14 @@
     @change.native="displayValue = $event.target.value"
     :validateEvent="false"
     ref="reference">
-    <i slot="icon"
+    <svg-icon slot="icon"
       class="el-input__icon"
       @click="handleClickIcon"
-      :class="[showClose ? 'el-icon-close' : triggerClass]"
+      :icon="showClose ? 'close' : triggerClass"
       @mouseenter="handleMouseEnterIcon"
       @mouseleave="showClose = false"
       v-if="haveTrigger">
-    </i>
+    </svg-icon>
   </el-input>
 </template>
 
@@ -292,7 +292,7 @@ export default {
     },
 
     triggerClass() {
-      return this.type.indexOf('time') !== -1 ? 'el-icon-time' : 'el-icon-date';
+      return this.type.indexOf('time') !== -1 ? 'clock' : 'calendar';
     },
 
     selectionMode() {
