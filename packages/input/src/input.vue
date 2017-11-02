@@ -34,7 +34,7 @@
         @focus="handleFocus"
         @blur="handleBlur"
       >
-      <i class="el-input__icon el-icon-loading" v-if="validating"></i>
+      <svg-icon icon="loading" class="el-input__icon el-icon-loading" v-if="validating"></svg-icon>
       <!-- 后置元素 -->
       <div class="el-input-group__append" v-if="$slots.append">
         <slot name="append"></slot>
