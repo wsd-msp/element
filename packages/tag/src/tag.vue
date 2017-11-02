@@ -7,7 +7,7 @@
       <slot></slot>
       <svg-icon icon="close" class="el-tag__close el-icon-close"
         v-if="closable"
-        @click="handleClose"/>
+        @click.native="handleClose"/>
     </span>
   </transition>
 </template>
