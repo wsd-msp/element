@@ -2,7 +2,7 @@
   <label
     class="el-checkbox-button"
       :class="[
-        size ? 'el-checkbox-button--' + size : '',
+        buttonSize ? 'el-checkbox-button--' + buttonSize : '',
         { 'is-disabled': disabled },
         { 'is-checked': isChecked },
         { 'is-focus': focus },
@@ -62,7 +62,8 @@
       checked: Boolean,
       name: String,
       trueLabel: [String, Number],
-      falseLabel: [String, Number]
+      falseLabel: [String, Number],
+      size: String
     },
     computed: {
       model: {
@@ -129,8 +130,8 @@
         };
       },
 
-      size() {
-        return this._checkboxGroup.size;
+      buttonSize() {
+        return this.size || this._checkboxGroup.size;
       }
     },
     methods: {
