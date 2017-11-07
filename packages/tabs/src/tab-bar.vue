@@ -23,10 +23,11 @@
             if (!$el) { return false; }
 
             if (!tab.active) {
-              offset += $el.clientWidth;
+//              offset += $el.clientWidth;
               return true;
             } else {
               tabWidth = $el.clientWidth;
+              offset = $el.offsetLeft;
               return false;
             }
           });
