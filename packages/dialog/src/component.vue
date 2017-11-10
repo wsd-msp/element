@@ -12,7 +12,7 @@
           </slot>
           <button type="button" class="el-dialog__headerbtn" aria-label="Close" 
                   v-if="showClose" @click="handleClose">
-            <i class="el-dialog__close el-icon el-icon-close"></i>
+            <svg-icon class="el-dialog__close el-icon el-icon-close" icon="close"/>
           </button>
         </div>
         <div class="el-dialog__body" v-if="rendered"><slot></slot></div>
