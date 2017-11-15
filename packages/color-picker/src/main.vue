@@ -8,7 +8,7 @@
           }"></span>
         <span class="el-color-picker__empty el-icon-close" v-if="!value && !showPanelColor"></span>
       </span>
-      <span class="el-color-picker__icon el-icon-caret-bottom"></span>
+	  <svg-icon class="el-color-picker__icon" icon="chevron-down" />
     </div>
     <picker-dropdown
        ref="dropdown"
@@ -17,7 +17,8 @@
        @pick="confirmValue"
        @clear="clearValue"
        :color="color"
-       :show-alpha="showAlpha">
+       :show-alpha="showAlpha"
+	   :show-clear="showClear">
     </picker-dropdown>
   </div>
 </template>
@@ -36,6 +37,8 @@
       },
       showAlpha: {
         type: Boolean
+      }, showClear: {
+		type: Boolean
       },
       colorFormat: {
         type: String
