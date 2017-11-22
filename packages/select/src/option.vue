@@ -11,6 +11,7 @@
     }">
     <slot>
       <span>{{ currentLabel }}</span>
+		<svg-icon class="selected-icon" v-show="itemSelected" icon="check"/>
     </slot>
   </li>
 </template>
