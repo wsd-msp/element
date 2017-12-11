@@ -95,16 +95,19 @@
       },
 
       handleClear() {
-        this.$emit('pick');
+        this.$emit('pick', null);
       },
 
-      scrollToOption(className = 'selected') {
+      scrollToOption(selector = '.selected') {
         const menu = this.$refs.popper.querySelector('.el-picker-panel__content');
-        scrollIntoView(menu, menu.getElementsByClassName(className)[0]);
+        scrollIntoView(menu, menu.querySelector(selector));
       },
 
       handleMenuEnter() {
-        this.$nextTick(() => this.scrollToOption());
+        const selected = this.items.map(item => item.value).indexOf(this.value) !== -1;
+        const hasDefault = this.items.map(item => item.value).indexOf(this.defaultValue) !== -1;
+        const option = (selected && '.selected') || (hasDefault && '.default') || '.time-select-item:not(.disabled)';
+        this.$nextTick(() => this.scrollToOption(option));
       }
     },
 
@@ -115,6 +118,7 @@
         end: '18:00',
         step: '00:30',
         value: '',
+        defaultValue: '',
         visible: false,
         minTime: '',
         maxTime: '',
