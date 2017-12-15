@@ -26,7 +26,9 @@
 
     methods: {
       handleClick(e) {
-        this.dispatch('ElDropdown', 'menu-item-click', [this.command, this]);
+        if (!this.disabled) {
+          this.dispatch('ElDropdown', 'menu-item-click', [this.command, this]);
+        }
       }
     }
   };
