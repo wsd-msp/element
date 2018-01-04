@@ -11,7 +11,8 @@
 			@blur="handleBlur"
 			@keydown.native="handleKeydown"
 			:value="displayValue"
-			@change.native="displayValue = $event.target.value"
+			@input="value => userInput = value"
+			@change.native="handleChange"
 			:validateEvent="false"
 			ref="reference">
 		<svg-icon slot="icon"
@@ -182,6 +183,16 @@
     right: 'bottom-end'
   };
 
+  const parseAsFormatAndType = (value, customFormat, type, rangeSeparator = '-') => {
+    if (!value) return null;
+    const parser = (
+      TYPE_VALUE_RESOLVER_MAP[type] ||
+      TYPE_VALUE_RESOLVER_MAP['default']
+    ).parser;
+    const format = customFormat || DEFAULT_FORMATS[type];
+    return parser(value, format, rangeSeparator);
+  };
+
   // only considers date-picker's value: Date or [Date, Date]
   const valueEquals = function(a, b) {
     const aIsArray = a instanceof Array;
@@ -234,6 +245,7 @@
       return {
         pickerVisible: false,
         showClose: false,
+        userInput: null,
         currentValue: '',
         unwatchPickerOptions: null
       };
@@ -266,6 +278,10 @@
     },
 
     computed: {
+      ranged() {
+        return this.type.indexOf('range') > -1;
+      },
+
       reference() {
         return this.$refs.reference.$el;
       },
@@ -358,6 +374,11 @@
     },
 
     methods: {
+      parseString(value) {
+        const type = Array.isArray(value) ? this.type : this.type.replace('range', '');
+        return parseAsFormatAndType(value, this.format, type);
+      },
+
       handleMouseEnterIcon() {
         if (this.readonly || this.disabled) return;
         if (!this.valueIsEmpty && this.clearable) {
@@ -404,6 +425,19 @@
 
       handleBlur() {
         this.$emit('blur', this);
+      },
+
+      handleChange() {
+        if (this.userInput) {
+          const value = this.parseString(this.displayValue);
+          if (value) {
+            this.picker.value = value;
+            if (this.isValidValue(value)) {
+              this.$emit('input', value);
+              this.userInput = null;
+            }
+          }
+        }
       },
 
       handleKeydown(event) {
