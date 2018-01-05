@@ -435,7 +435,7 @@
         if (this.userInput) {
           const value = this.parseString(this.displayValue);
           if (value) {
-            this.displayValue = value;
+            this.currentValue = value;
             if (this.isValidValue(value)) {
               this.$emit('input', value);
               this.userInput = null;
