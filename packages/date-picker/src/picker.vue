@@ -374,6 +374,10 @@
     },
 
     methods: {
+      blur() {
+        this.refInput.forEach(input => input.blur());
+      },
+
       parseString(value) {
         const type = Array.isArray(value) ? this.type : this.type.replace('range', '');
         return parseAsFormatAndType(value, this.format, type);
@@ -431,7 +435,7 @@
         if (this.userInput) {
           const value = this.parseString(this.displayValue);
           if (value) {
-            this.picker.value = value;
+            this.displayValue = value;
             if (this.isValidValue(value)) {
               this.$emit('input', value);
               this.userInput = null;
