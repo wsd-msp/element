@@ -454,29 +454,9 @@
           return;
         }
 
-        // Tab
-        if (keyCode === 9) {
-          if (!this.ranged) {
-            this.handleChange();
-            this.pickerVisible = this.picker.visible = false;
-            this.blur();
-            event.stopPropagation();
-          } else {
-            // user may change focus between two input
-            setTimeout(() => {
-              if (this.refInput.indexOf(document.activeElement) === -1) {
-                this.pickerVisible = false;
-                this.blur();
-                event.stopPropagation();
-              }
-            }, 0);
-          }
-          return;
-        }
-
         // Enter
-        if (keyCode === 13 && this.displayValue) {
-          const value = this.parseString(this.displayValue);
+        if (keyCode === 13 && this.userInput) {
+          const value = this.parseString(this.userInput);
           if (this.isValidValue(value)) {
             this.handleChange();
             this.pickerVisible = this.picker.visible = false;
