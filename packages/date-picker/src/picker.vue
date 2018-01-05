@@ -433,7 +433,7 @@
 
       handleChange() {
         if (this.userInput) {
-          const value = this.parseString(this.displayValue);
+          const value = this.parseString(this.userInput);
           if (value) {
             this.currentValue = value;
             if (this.isValidValue(value)) {
