@@ -375,7 +375,7 @@
 
     methods: {
       blur() {
-        this.refInput.forEach(input => input.blur());
+        this.refInput.blur();
       },
 
       parseString(value) {
